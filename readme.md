@@ -6,8 +6,7 @@ This repository provides a clean and minimal starting point for building reactiv
 ## Highlights
 
 - Kotlin-based project
-- Spring Boot + WebFlux (Reactive Stack)
-- Gradle Kotlin DSL
+- Spring Boot + WebFlux (Reactive Stack) + QueryDSL
 - Multi-module ready structure
 - Minimal, template-oriented setup
 
