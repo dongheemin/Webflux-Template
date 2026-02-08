@@ -1,6 +1,7 @@
 package net.donggul.api.entity
 
 import com.infobip.spring.data.jdbc.annotation.processor.Schema
+import io.r2dbc.postgresql.codec.Json
 import org.springframework.data.annotation.CreatedBy
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.Id
@@ -21,6 +22,7 @@ data class CKEntityObject(
     @Column("composite_id1") val idCK1: UUID,
     @Column("composite_id2") val idCK2: String,
 ): Persistable<CKEntityObject.Companion.CKEntityID> {
+    @Column("conent") var content: Json? = null
     @CreatedDate
     @Column("created_at") lateinit var createdAt: LocalDateTime
     @CreatedBy

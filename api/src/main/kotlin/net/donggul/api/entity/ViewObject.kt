@@ -14,10 +14,10 @@ import java.util.UUID
 @Table("view_table")
 data class ViewObject(
     @Column("id") val _id: UUID,
+    @Column("content1") val content1: String?,
+    @Column("content2") val content2: Json?,
     @Column("created_at") val createdAt: LocalDateTime,
     @Column("created_by") val createdBy: String,
-    @Column("content") val content: String,
-    @Column("content2") val content2: Json?,
     @Column("last_modified_at") val lastModifiedAt: LocalDateTime?,
     @Column("last_modified_by") val lastModifiedBy: String?,
 ) {
