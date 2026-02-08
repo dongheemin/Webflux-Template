@@ -15,4 +15,12 @@ class EntityMapper {
         this.lastModifiedAt = entity.lastModifiedAt
         this.lastModifiedBy = entity.lastModifiedBy
     }
+    fun toEntity(dto: net.donggul.api.data.EntityObject) = EntityObject(dto.id).apply {
+        this.name = dto.name
+        this.content = dto.content
+    }
+    fun toUpdatedEntity(entity: EntityObject, dto: net.donggul.api.data.EntityObject) = entity.apply {
+        this.name = dto.name
+        this.content = dto.content
+    }
 }

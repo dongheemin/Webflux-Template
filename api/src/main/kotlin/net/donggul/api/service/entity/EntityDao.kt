@@ -13,4 +13,5 @@ class EntityDao(
 ) {
     fun findById(id: String): Mono<EntityObject> = repo.findById(id)
     fun findAllByName(name: String): Flux<EntityObject> = repo.findAllByName(name)
+    fun insert(entity: EntityObject): Mono<EntityObject> = repo.save(entity)
 }

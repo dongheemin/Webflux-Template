@@ -14,4 +14,7 @@ class EntityHandler(
 ) {
     fun findById(id: String): Mono<EntityObject> = dao.findById(id).map(mapper::toDto)
     fun findAllByName(name: String): Flux<EntityObject> = dao.findAllByName(name).map(mapper::toDto)
+    fun save(dto: EntityObject): Mono<EntityObject> = Mono.just(mapper.toEntity(dto))
+        .flatMap(dao::insert)
+        .map(mapper::toDto)
 }

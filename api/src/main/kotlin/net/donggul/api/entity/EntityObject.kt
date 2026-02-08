@@ -19,8 +19,9 @@ import java.time.LocalDateTime
 data class EntityObject(
     @Id @Column("id") val _id: String,
 ): Persistable<String> {
-    @Column("name") val name: String? = null
-    @Column("content") val content: Json? = null
+    @Column("name") var name: String? = null
+    @Column("content")
+    var content: Json? = null
     @CreatedDate
     @Column("created_at") lateinit var createdAt: LocalDateTime
     @CreatedBy
