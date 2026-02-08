@@ -1,0 +1,30 @@
+spring:
+  application.name: {application_name}
+  main.web-application-type: reactive
+#  cloud:
+#    zookeeper:
+#      connect-string: {connect_string}
+#      discovery.root: /{discovery_root}
+#    stream:
+#      bindings:
+#        {consume_function_name}-in-0:
+#          destination: {consume_topic_name}
+#          group: {destination_group_name}
+#        {publish_function_name}-out-0:
+#          destination: {publish_topic_name}
+#      kafka:
+#        binder:
+#          brokers: {brokers_list}
+#          auto-add-partitions: true
+#  r2dbc:
+#    url: r2dbc:postgresql://{DB_SERVER}:5432/{DB}
+#    username: {DB_USERNAME}
+#    password: {DB_PASSWORD}
+#
+#logging:
+#  level:
+#    io.r2dbc.postgresql.QUERY: TRACE
+#    io.r2dbc.postgresql.PARAM: TRACE
+
+server:
+  port: 0

@@ -1,0 +1,44 @@
+rootProject.name = "Webflux-Template"
+
+dependencyResolutionManagement {
+    versionCatalogs {
+        create("libs") {
+            library("reflect", "org.jetbrains.kotlin", "kotlin-reflect").withoutVersion()
+            library("stdlib-jdk8", "org.jetbrains.kotlin", "kotlin-stdlib-jdk8").withoutVersion()
+            library("kotlin-reactor", "io.projectreactor.kotlin", "reactor-kotlin-extensions").withoutVersion()
+            library("kotlin-jackson", "com.fasterxml.jackson.module", "jackson-module-kotlin").withoutVersion()
+            library("webflux", "org.springframework.boot", "spring-boot-starter-webflux").withoutVersion()
+            bundle("kotlin-webflux", listOf("reflect", "stdlib-jdk8", "kotlin-reactor", "kotlin-jackson", "webflux"))
+
+            library("spring-gateway", "org.springframework.cloud", "spring-cloud-starter-gateway").withoutVersion()
+            library("spring-discovery", "org.springframework.cloud", "spring-cloud-starter-zookeeper-discovery").withoutVersion()
+            library("spring-log4j2", "org.springframework.boot", "spring-boot-starter-log4j2").withoutVersion()
+            library("spring-security", "org.springframework.boot", "spring-boot-starter-security").withoutVersion()
+            library("spring-kafka", "org.springframework.cloud", "spring-cloud-starter-stream-kafka").withoutVersion()
+            bundle("spring-client", listOf("spring-discovery", "spring-log4j2", "spring-security"))
+            bundle("spring-client-without-security", listOf("spring-discovery", "spring-log4j2"))
+
+            library("r2dbc", "org.springframework.boot", "spring-boot-starter-data-r2dbc").withoutVersion()
+            library("r2dbc-postgres", "io.r2dbc", "r2dbc-postgresql").version { require("0.8.13.RELEASE") }
+            bundle("r2dbc-postgres", listOf("r2dbc", "r2dbc-postgres"))
+
+            library("querydsl-core", "com.querydsl", "querydsl-core").withoutVersion()
+            library("querydsl-apt", "com.querydsl", "querydsl-apt").withoutVersion()
+            library("querydsl-r2dbc", "com.infobip", "infobip-spring-data-r2dbc-querydsl-boot-starter").version { require("7.2.0") }
+            bundle("r2dbc-querydsl", listOf("querydsl-core", "querydsl-apt", "querydsl-r2dbc"))
+
+            library("spring-boot-test", "org.springframework.boot", "spring-boot-starter-test").withoutVersion()
+            library("mockito-kotlin", "org.mockito.kotlin", "mockito-kotlin").version { require("4.0.0") }
+            library("mockito-inline", "org.mockito", "mockito-inline").withoutVersion()
+            library("reactor-test", "io.projectreactor", "reactor-test").withoutVersion()
+            library("kotlin-test", "org.jetbrains.kotlin", "kotlin-test").withoutVersion()
+            bundle("test", listOf("spring-boot-test", "mockito-kotlin", "mockito-inline", "reactor-test", "kotlin-test"))
+
+            library("spring-cloud-bom", "org.springframework.cloud", "spring-cloud-dependencies").version { require("2021.0.4") }
+            library("lombok", "org.projectlombok", "lombok").version { require("1.18.24") }
+            library("jackson-annotations", "com.fasterxml.jackson.core", "jackson-annotations").version { require("2.13.3") }
+        }
+    }
+}
+
+include("api")
