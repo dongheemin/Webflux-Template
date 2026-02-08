@@ -4,6 +4,8 @@ import com.infobip.spring.data.r2dbc.QuerydslR2dbcFragment
 import com.querydsl.core.BooleanBuilder
 import com.querydsl.core.types.Predicate
 import com.querydsl.sql.SQLQuery
+import net.donggul.api.search.PageReactive
+import net.donggul.api.search.SearchParam
 import reactor.core.publisher.Mono
 
 abstract class Searchable<E> (
