@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
+//Handler는 dao에서 산출된 데이터를 처리하는 비즈니스 로직등이 기재되어야 함.
+
 @Service
 class EntityHandler(
     private val dao: EntityDao,

@@ -8,6 +8,8 @@ import org.springframework.web.reactive.function.server.ServerRequest
 import org.springframework.web.reactive.function.server.ServerResponse
 import reactor.core.publisher.Mono
 
+//Router는 path의 값, Header 데이터 처리등을 일임함
+
 @Configuration
 class EntityRouter(
     private val handler: EntityHandler,

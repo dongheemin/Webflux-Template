@@ -3,6 +3,8 @@ package net.donggul.api.service.entity
 import net.donggul.api.entity.EntityObject
 import org.springframework.stereotype.Component
 
+//Mapper는 데이터의 변경, 새로운 형식의 데이터 생성등이 일임되어야 함.
+
 @Component
 class EntityMapper {
     fun toDto(entity: EntityObject) = net.donggul.api.data.EntityObject(entity._id).apply {

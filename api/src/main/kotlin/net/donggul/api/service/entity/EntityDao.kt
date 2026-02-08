@@ -5,6 +5,8 @@ import org.springframework.stereotype.Component
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
+//Dao는 Entity의 산출이 일임되어야 함.
+
 @Component
 class EntityDao(
     private val repo: EntityRepository
